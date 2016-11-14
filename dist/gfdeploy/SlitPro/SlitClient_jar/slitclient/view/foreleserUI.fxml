@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.view.foreleserController">
+  <tabs>
+    <Tab closable="false" text="Hovedmeny">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
+               <children>
+                  <Accordion layoutX="138.0" layoutY="256.0" />
+                  <ToolBar layoutY="531.0" prefHeight="40.0" prefWidth="800.0" style="-fx-background-color: grey;">
+                     <items>
+                        <Button fx:id="leggTilModulBtn" mnemonicParsing="false" onAction="#leggTilModul" text="Legg til Modul" />
+                        <Button mnemonicParsing="false" text="Fjern eksisterende modul" />
+                        <Button fx:id="tilStudentButton" mnemonicParsing="false" onAction="#tilStudentUI" text="Til student UI" />
+                        <Button fx:id="tilbakeLogInn" mnemonicParsing="false" onAction="#tilLogInn" text="Tilbake til log inn" />
+                     </items>
+                     <padding>
+                        <Insets left="23.0" />
+                     </padding>
+                  </ToolBar>
+                  <ListView fx:id="deltakereList" layoutX="24.0" layoutY="56.0" prefHeight="460.0" prefWidth="435.0" />
+                  <Label layoutX="24.0" layoutY="24.0" text="Deltakere">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Button layoutX="373.0" layoutY="20.0" mnemonicParsing="false" text="Fjern student" />
+                  <Label layoutX="518.0" layoutY="26.0" text="Modul ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="626.0" layoutY="26.0" text="Antall fullført">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="518.0" layoutY="74.0" text="Modul 1" />
+                  <Label layoutX="653.0" layoutY="74.0" text="75 %" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Modul 1">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
+               <children>
+                  <Button layoutX="34.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Godkjenn" />
+                  <ListView fx:id="listModulEn" layoutX="34.0" layoutY="31.0" prefHeight="457.0" prefWidth="712.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Modul 2">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <GridPane prefHeight="138.0" prefWidth="700.0" style="-fx-background-color: cornsilk;" AnchorPane.bottomAnchor="383.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+                     <children>
+                        <Label text="Velg">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Navn" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="25.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="73.0" layoutY="29.0" text="Status" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="147.0" layoutY="29.0" text="Fil" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label layoutX="260.0" layoutY="29.0" text="Dato levert" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <CheckBox mnemonicParsing="false" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox layoutX="10.0" layoutY="94.0" mnemonicParsing="false" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <CheckBox layoutX="10.0" layoutY="94.0" mnemonicParsing="false" GridPane.rowIndex="3">
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </CheckBox>
+                        <Label text="Etternavn, Fornavn" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Ikke sett" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Filnavn.pdf" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <Label text="15.10.2016" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="18.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="61.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="187.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="97.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="116.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="10.0" prefWidth="149.0" />
+                     </columnConstraints>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="181.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="268.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </children></AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>
