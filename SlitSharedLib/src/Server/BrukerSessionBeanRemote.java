@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Server;
+
+import Data.BrukerData;
+import java.util.List;
+import javax.ejb.Remote;
+
+/**
+ *
+ * @author Edvin
+ */
+@Remote
+public interface BrukerSessionBeanRemote {
+    
+    
+    
+    String getBrukerNavnFromId(int id);
+    
+    BrukerData getBruker(int id);
+    
+    List<BrukerData> getAllUsers();
+    
+    boolean storeBruker(BrukerData brukerEn);
+}
