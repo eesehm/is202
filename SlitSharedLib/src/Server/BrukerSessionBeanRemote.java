@@ -25,4 +25,6 @@ public interface BrukerSessionBeanRemote {
     List<BrukerData> getAllUsers();
     
     boolean storeBruker(BrukerData brukerEn);
+    
+    BrukerData logInnBruker(String epost, String password);
 }

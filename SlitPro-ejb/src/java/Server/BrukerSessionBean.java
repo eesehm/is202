@@ -102,7 +102,29 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
               return false;
           }
           return true;
+
       }
-   
+      
+      @Override
+      public BrukerData logInnBruker(String epost, String password) {
+          BrukerData li = new BrukerData();
+          
+          try {
+              Query q = em.createNamedQuery("Bruker.login", Bruker.class);
+              
+              q.setParameter("epost", epost);
+              q.setParameter("password", password);
+              
+              Bruker b = (Bruker)q.getSingleResult();
+              
+              li = this.convertBruker(b);
+          }
+          catch(Exception e) {
+              e.printStackTrace();
+          }
+            return li;
+      }
+      
+     
     
 }

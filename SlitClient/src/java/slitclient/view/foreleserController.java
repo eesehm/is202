@@ -1,7 +1,12 @@
 
 package slitclient.view;
 
+import Data.BrukerData;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +18,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import slitclient.manager.BrukerManager;
 
 
 public class foreleserController {
@@ -33,6 +39,8 @@ public class foreleserController {
     public ListView deltakereList;
     @FXML
     private Button tilbakeLogInn;
+    @FXML
+    private ListView<String> MainListView;
     
     @FXML
     public void leggTilModul(ActionEvent e) throws IOException { //åpner vindu for å legge til ny modul
@@ -68,7 +76,7 @@ public class foreleserController {
         public void tilStudentUI(ActionEvent e) throws IOException {
             if(e.getSource() == tilStudentButton) {
            Stage stage3 = (Stage) tilStudentButton.getScene().getWindow();
-           Parent root = FXMLLoader.load(getClass().getResource("studentMV.fxml"));
+           Parent root = FXMLLoader.load(getClass().getResource("studentUI.fxml"));
            
            Scene scene3 = new Scene(root);
            stage3.setScene(scene3);
@@ -79,7 +87,7 @@ public class foreleserController {
         public void tilLogInn(ActionEvent e) throws IOException {
             if(e.getSource() == tilbakeLogInn) {
            Stage stage3 = (Stage) tilbakeLogInn.getScene().getWindow();
-           Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+           Parent root = FXMLLoader.load(getClass().getResource("logInn.fxml"));
            
            Scene scene3 = new Scene(root);
            stage3.setScene(scene3);
@@ -88,4 +96,16 @@ public class foreleserController {
     
             }
 }
+       /* @Override
+        public void initialize(URL url, ResourceBundle rb) {
+            BrukerManager bm = new BrukerManager();
+            
+            ObservableList<String> items = FXCollections.observableArrayList();
+            
+            for(BrukerData b : bm.getAllUsers())
+                 items.add(b.getEpost());
+        }
+        */
+        
+        
 }

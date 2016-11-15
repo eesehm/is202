@@ -27,12 +27,16 @@ public class BrukerManager {
         return this.lookupBrukerSessionBeanRemote().getBruker(id);
     }
     
-    public List<BrukerData> getUsers() {
+    public List<BrukerData> getAllUsers() {
         return this.lookupBrukerSessionBeanRemote().getAllUsers();
     }
     
     public boolean storeBruker(BrukerData dataBruker) {
         
         return this.lookupBrukerSessionBeanRemote().storeBruker(dataBruker);
+    }
+    
+    public BrukerData logInnBruker(String epost, String password) {
+       return this.lookupBrukerSessionBeanRemote().logInnBruker(epost, password);
     }
 }

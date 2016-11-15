@@ -30,7 +30,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Bruker.findByFornavn", query = "SELECT b FROM Bruker b WHERE b.fornavn = :fornavn"),
     @NamedQuery(name = "Bruker.findByEtternavn", query = "SELECT b FROM Bruker b WHERE b.etternavn = :etternavn"),
     @NamedQuery(name = "Bruker.findByEpost", query = "SELECT b FROM Bruker b WHERE b.epost = :epost"),
-    @NamedQuery(name = "Bruker.findByPassword", query = "SELECT b FROM Bruker b WHERE b.password = :password")})
+    @NamedQuery(name = "Bruker.findByPassword", query = "SELECT b FROM Bruker b WHERE b.password = :password"),
+    @NamedQuery(name = "Bruker.login", query = "SELECT b FROM Bruker b WHERE b.epost = :epost AND b.password = :password")}) //brukes for å logge inn brukere
 
 public class Bruker implements Serializable {
 
