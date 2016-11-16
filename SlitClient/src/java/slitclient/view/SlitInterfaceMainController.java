@@ -99,21 +99,10 @@ public class SlitInterfaceMainController extends Application {
     }
    }
  }
-    /*
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        BrukerManager bm = new BrukerManager();
-        
-        List<BrukerData> bruker = bm.getAllUsers();
-        
-        ObservableList<String> items = FXCollections.observableArrayList();
-        
-        for(BrukerData b : bruker) {
-            items.add(b.getEpost());
-        }
-        listViewFX.setItems(items);
-    }
-*/
+    
+    
+    
+
                 
    
 }

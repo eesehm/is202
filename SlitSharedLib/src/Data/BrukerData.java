@@ -2,8 +2,9 @@ package Data;
 
 
 public class BrukerData implements java.io.Serializable{
-    
 
+   
+    
 
 private int ID;
 

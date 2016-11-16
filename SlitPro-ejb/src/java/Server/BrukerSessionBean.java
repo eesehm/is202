@@ -9,6 +9,10 @@ import Data.BrukerData;
 import Database.Bruker;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -24,6 +28,9 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     @PersistenceContext
     private EntityManager em;
 
+    
+    
+    
     
     @Override
     public String getBrukerNavnFromId( int id) {
@@ -123,8 +130,14 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
               e.printStackTrace();
           }
             return li;
-      }
       
+      }
+        
+
+       
+        
+                
+        }
      
     
-}
+

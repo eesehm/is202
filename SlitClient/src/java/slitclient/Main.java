@@ -1,11 +1,8 @@
 
 package slitclient;
 
-
 import Data.BrukerData;
-import Server.BrukerSessionBeanRemote;
 import javafx.application.Application;
-import javax.ejb.EJB;
 import slitclient.manager.BrukerManager;
 import slitclient.view.SlitInterfaceMainController;
 
@@ -23,10 +20,6 @@ public class Main {
        System.out.println(bruker.getFornavn());
        System.out.println(bruker.getEtternavn());
      
-       System.out.println();
-    
-    
-      
       /*BrukerData dataBruker = new BrukerData();
       
       dataBruker.setID(7);

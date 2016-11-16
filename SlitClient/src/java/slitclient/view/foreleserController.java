@@ -10,18 +10,23 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 import slitclient.manager.BrukerManager;
 
 
-public class foreleserController {
+public class foreleserController implements Initializable {
     
     @FXML
     private Button leggTilModulBtn;
@@ -41,6 +46,16 @@ public class foreleserController {
     private Button tilbakeLogInn;
     @FXML
     private ListView<String> MainListView;
+    @FXML
+    private TableView<String> mainTableView;
+    @FXML
+    private TableColumn<BrukerData, String> columnFornavn;
+    @FXML
+    private TableColumn<BrukerData, String> columnEtternavn;
+    @FXML
+    private TableColumn<BrukerData, String> columnEpost;
+    
+    private ObservableList<BrukerData> data;
     
     @FXML
     public void leggTilModul(ActionEvent e) throws IOException { //åpner vindu for å legge til ny modul
@@ -96,16 +111,23 @@ public class foreleserController {
     
             }
 }
-       /* @Override
-        public void initialize(URL url, ResourceBundle rb) {
+       
+        @Override
+        public void initialize(URL url, ResourceBundle rb) { //initialize???
             BrukerManager bm = new BrukerManager();
             
-            ObservableList<String> items = FXCollections.observableArrayList();
+            ObservableList<String> item = FXCollections.observableArrayList();
             
-            for(BrukerData b : bm.getAllUsers())
-                 items.add(b.getEpost());
+            for(BrukerData b : bm.getAllUsers()) {
+                 item.add(b.getEtternavn());
+                 
         }
-        */
+            
+            this.MainListView.setItems(item);
+            
+        }
         
         
 }
+
+         

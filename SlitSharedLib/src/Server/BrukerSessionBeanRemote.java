@@ -7,6 +7,7 @@ package Server;
 
 import Data.BrukerData;
 import java.util.List;
+import javafx.scene.control.TableView;
 import javax.ejb.Remote;
 
 /**
@@ -22,7 +23,7 @@ public interface BrukerSessionBeanRemote {
     
     BrukerData getBruker(int id);
     
-    List<BrukerData> getAllUsers();
+   List<BrukerData> getAllUsers();
     
     boolean storeBruker(BrukerData brukerEn);
     
