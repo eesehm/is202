@@ -51,7 +51,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
     }
     
         @Override
-        public List<BrukerData> getAllUsers() {
+        public List<BrukerData> getBrukere() {
             
             List<BrukerData> brukerListe = new ArrayList<BrukerData>();
             
@@ -115,7 +115,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
       
       @Override
       public BrukerData logInnBruker(String epost, String password) {
-          BrukerData li = new BrukerData();
+          BrukerData bd = new BrukerData();
           
           try {
               Query q = em.createNamedQuery("Bruker.login", Bruker.class);
@@ -125,12 +125,12 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
               
               Bruker b = (Bruker)q.getSingleResult();
               
-              li = this.convertBruker(b);
+              bd = this.convertBruker(b);
           }
           catch(Exception e) {
               e.printStackTrace();
           }
-            return li;
+            return bd;
       
       }
       
