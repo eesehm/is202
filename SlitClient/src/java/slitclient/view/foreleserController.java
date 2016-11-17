@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.persistence.EntityManager;
 
 import slitclient.manager.BrukerManager;
 
@@ -47,7 +48,7 @@ public class foreleserController implements Initializable {
     @FXML
     private ListView<String> MainListView;
     @FXML
-    private TableView<String> mainTableView;
+    private TableView<BrukerData> mainTableView;
     @FXML
     private TableColumn<BrukerData, String> columnFornavn;
     @FXML
@@ -55,7 +56,7 @@ public class foreleserController implements Initializable {
     @FXML
     private TableColumn<BrukerData, String> columnEpost;
     
-    private ObservableList<BrukerData> data;
+    public ObservableList<BrukerData> data;
     
     @FXML
     public void leggTilModul(ActionEvent e) throws IOException { //åpner vindu for å legge til ny modul
@@ -111,7 +112,7 @@ public class foreleserController implements Initializable {
     
             }
 }
-       
+        /*
         @Override
         public void initialize(URL url, ResourceBundle rb) { //initialize???
             BrukerManager bm = new BrukerManager();
@@ -126,8 +127,21 @@ public class foreleserController implements Initializable {
             this.MainListView.setItems(item);
             
         }
-        
-        
+        */
+        @Override
+        public void initialize(URL u, ResourceBundle b) {
+            
+            BrukerManager bm = new BrukerManager();
+            
+            columnFornavn.setCellValueFactory(new PropertyValueFactory<BrukerData, String> ("fornavn"));
+            columnEtternavn.setCellValueFactory(new PropertyValueFactory<BrukerData, String> ("etternavn"));
+            columnEpost.setCellValueFactory(new PropertyValueFactory<BrukerData, String> ("epost"));
+            
+            data = FXCollections.observableArrayList();
+            
+            data.addAll(bm.getAllUsers());
+            this.mainTableView.setItems(data);
+        }
 }
 
          

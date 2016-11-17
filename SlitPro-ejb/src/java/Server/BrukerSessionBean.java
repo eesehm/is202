@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javax.ejb.Stateless;
+import javax.jms.Session;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -132,7 +133,8 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
             return li;
       
       }
-        
+      
+      
 
        
         

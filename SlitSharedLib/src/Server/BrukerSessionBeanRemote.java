@@ -23,7 +23,7 @@ public interface BrukerSessionBeanRemote {
     
     BrukerData getBruker(int id);
     
-   List<BrukerData> getAllUsers();
+    List<BrukerData> getAllUsers();
     
     boolean storeBruker(BrukerData brukerEn);
     
