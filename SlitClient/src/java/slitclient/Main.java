@@ -1,4 +1,4 @@
-
+    
 package slitclient;
 
 import Data.BrukerData;
@@ -11,7 +11,7 @@ public class Main {
 
      public static void main(String[] args) {
       Application.launch(SlitInterfaceMainController.class, args);
-      
+      /*
       BrukerManager bm = new BrukerManager();
       
       BrukerData bruker = bm.getBruker(1);
@@ -20,6 +20,7 @@ public class Main {
        System.out.println(bruker.getFornavn());
        System.out.println(bruker.getEtternavn());
      
+       
       /*BrukerData dataBruker = new BrukerData();
       
       dataBruker.setID(7);

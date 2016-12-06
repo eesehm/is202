@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.view.foreleserController">
+<TabPane fx:id="tabPane" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.view.foreleserController">
   <tabs>
     <Tab closable="false" text="Hovedmeny">
       <content>
@@ -28,30 +28,24 @@
                         <Insets left="23.0" />
                      </padding>
                   </ToolBar>
-                  <Label layoutX="24.0" layoutY="24.0" text="Deltakere">
+                  <Label layoutX="49.0" layoutY="26.0" text="Deltakere">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font></Label>
-                  <Button layoutX="373.0" layoutY="20.0" mnemonicParsing="false" text="Fjern student" />
-                  <Label layoutX="518.0" layoutY="26.0" text="Modul ">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="626.0" layoutY="26.0" text="Antall fullført">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="518.0" layoutY="74.0" text="Modul 1" />
-                  <Label layoutX="653.0" layoutY="74.0" text="75 %" />
-                  <TableView fx:id="mainTableView" layoutX="40.0" layoutY="74.0" prefHeight="401.0" prefWidth="326.0">
+                  <Button fx:id="deleteButton" layoutX="293.0" layoutY="24.0" mnemonicParsing="false" text="Fjern student" />
+                  <TableView fx:id="mainTableView" layoutX="40.0" layoutY="74.0" prefHeight="409.0" prefWidth="339.0">
                     <columns>
                       <TableColumn fx:id="columnFornavn" prefWidth="91.0" text="Fornavn" />
                       <TableColumn fx:id="columnEtternavn" prefWidth="90.0" text="Etternavn" />
-                        <TableColumn fx:id="columnEpost" prefWidth="144.0" text="E-post adresse" />
+                        <TableColumn fx:id="columnEpost" prefWidth="156.0" text="E-post adresse" />
                     </columns>
                   </TableView>
+                  <Label layoutX="43.0" layoutY="495.0" text="Antall registerte studenter:" />
+                  <Label fx:id="antallStudenterLabel" layoutX="190.0" layoutY="495.0" prefHeight="17.0" prefWidth="43.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <Button layoutX="173.0" layoutY="24.0" mnemonicParsing="false" text="Legg til student" />
                </children></AnchorPane>
       </content>
     </Tab>

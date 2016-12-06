@@ -28,8 +28,8 @@ public class BrukerManager {
         return this.lookupBrukerSessionBeanRemote().getBruker(id);
     }
     
-    public List<BrukerData> getAllUsers() {
-        return this.lookupBrukerSessionBeanRemote().getAllUsers();
+    public List<BrukerData> getBrukere() {
+        return this.lookupBrukerSessionBeanRemote().getBrukere();
     }
     
     public boolean storeBruker(BrukerData dataBruker) {
@@ -40,4 +40,8 @@ public class BrukerManager {
     public BrukerData logInnBruker(String epost, String password) {
        return this.lookupBrukerSessionBeanRemote().logInnBruker(epost, password);
     }
+ 
+    
+ 
+   
 }
