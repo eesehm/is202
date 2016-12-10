@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="250.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Label layoutX="15.0" layoutY="47.0" text="Navn:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="88.0" text="E-post adresse:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="148.0" text="Skriv inn ønsket passord:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="183.0" layoutY="45.0" prefHeight="25.0" prefWidth="199.0" promptText="Fornavn Etternavn" />
+      <TextField layoutX="183.0" layoutY="86.0" prefHeight="25.0" prefWidth="199.0" />
+      <PasswordField layoutX="183.0" layoutY="146.0" prefHeight="25.0" prefWidth="199.0" />
+      <Button layoutX="317.0" layoutY="201.0" mnemonicParsing="false" text="Registrer" underline="true" />
+   </children>
+</AnchorPane>

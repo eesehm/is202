@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="220.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="slitclient.view.beskjedController">
+   <children>
+      <AnchorPane prefHeight="263.0" prefWidth="298.0" style="-fx-background-color: lightgrey;">
+         <children>
+            <Label layoutX="21.0" layoutY="14.0" text="Ny Beskjed:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="textArea" layoutX="21.0" layoutY="39.0" prefHeight="148.0" prefWidth="258.0" promptText="Skriv her..." />
+            <Label layoutX="201.0" layoutY="187.0" text="(Maks 150 ord)">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datoBeskjed" layoutX="21.0" layoutY="195.0" prefHeight="25.0" prefWidth="164.0" promptText="Velg Dato" />
+            <Button fx:id="beskjedButton" layoutX="21.0" layoutY="230.0" mnemonicParsing="false" onAction="#submitBeskjed" text="Send" underline="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
