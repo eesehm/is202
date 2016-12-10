@@ -31,9 +31,10 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Bruker.findByEtternavn", query = "SELECT b FROM Bruker b WHERE b.etternavn = :etternavn"),
     @NamedQuery(name = "Bruker.findByEpost", query = "SELECT b FROM Bruker b WHERE b.epost = :epost"),
     @NamedQuery(name = "Bruker.findByPassword", query = "SELECT b FROM Bruker b WHERE b.password = :password"),
+    @NamedQuery(name = "Bruker.deleteAll", query = "DELETE FROM Bruker b WHERE b.id >= 0"),
     @NamedQuery(name = "Bruker.login", query = "SELECT b FROM Bruker b WHERE b.epost = :epost AND b.password = :password"), //brukes for å logge inn brukere
     @NamedQuery(name = "Bruker.delete", query = "DELETE FROM Bruker b WHERE b.id = :id ")}) //slette bruker
-    
+
 public class Bruker implements Serializable {
 
     private static final long serialVersionUID = 1L;

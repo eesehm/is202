@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Server;
 
 import Data.BrukerData;
@@ -12,13 +7,11 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.jms.Session;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-/**
- *
- * @author Edvin
- */
+
 @Stateless
 public class BrukerSessionBean implements BrukerSessionBeanRemote {
 
@@ -36,7 +29,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         em.persist(object);
     }
     
-    @Override
+        @Override
         public BrukerData getBruker(int id) {
         Bruker bruker = em.find(Bruker.class, id);
         
@@ -127,10 +120,34 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
  
               
           }
-
-                    
+      
+      @Override
+      public BrukerData deleteBruker(int brukerId) {
+          
+          BrukerData bd = new BrukerData();
+          Query q = em.createNamedQuery("Bruker.delete", Bruker.class);
+          q.setParameter("id", brukerId);
+          q.executeUpdate();
+          
+          return bd;
+           
+      }
+      @Override
+      public BrukerData deleteBrukere() {
+          BrukerData bd = new BrukerData();
+          Query q = em.createNamedQuery("Bruker.deleteAll", Bruker.class);
+          
+          q.executeUpdate();
+          
+          return bd;
+      
+          
+      }
+     
+          
+      
+    
+           
 }
 
      
-    
-

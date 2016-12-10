@@ -13,13 +13,12 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Label layoutX="74.0" layoutY="14.0" text="Fornavn">
+            <Label fx:id="fornavnLabel" layoutX="74.0" layoutY="14.0" text="Fornavn">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
             <Label layoutX="28.0" layoutY="299.0" text="Informasjon fra foreleser:" />
-            <TextArea layoutX="28.0" layoutY="334.0" prefHeight="194.0" prefWidth="181.0" />
             <Hyperlink layoutX="84.0" layoutY="550.0" text="www.uia.no" />
             <ImageView fitHeight="194.0" fitWidth="152.0" layoutX="47.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,6 +30,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <TextFlow layoutX="24.0" layoutY="332.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="textMelding" prefHeight="202.0" prefWidth="200.0" />
+               </children></TextFlow>
+            <Label fx:id="beskjedDato" layoutX="163.0" layoutY="534.0" prefHeight="17.0" prefWidth="50.0" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lavender;">
          <children>
@@ -138,7 +142,7 @@
             </GridPane>
             <Button layoutX="383.0" layoutY="350.0" mnemonicParsing="false" text="Last opp modul" />
             <ProgressIndicator layoutX="387.0" layoutY="441.0" prefHeight="73.0" prefWidth="89.0" progress="0.0" />
-            <Label layoutX="413.0" layoutY="416.0" text="Fullført" />
+            <Label fx:id="testArea" layoutX="123.0" layoutY="354.0" prefHeight="118.0" prefWidth="190.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>
