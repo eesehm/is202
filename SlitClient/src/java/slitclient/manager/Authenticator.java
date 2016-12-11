@@ -1,4 +1,4 @@
-
+/*
 package slitclient.manager;
 
 import Data.BrukerData;
@@ -23,3 +23,4 @@ public class Authenticator {
         
     
 }
+*/

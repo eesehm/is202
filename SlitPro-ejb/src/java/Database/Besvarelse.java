@@ -39,6 +39,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Besvarelse.findByOpplastetFil", query = "SELECT b FROM Besvarelse b WHERE b.opplastetFil = :opplastetFil"),
     @NamedQuery(name = "Besvarelse.findByKommentar", query = "SELECT b FROM Besvarelse b WHERE b.kommentar = :kommentar"),
     @NamedQuery(name = "Besvarelse.findByVurderingsvarsel", query = "SELECT b FROM Besvarelse b WHERE b.vurderingsvarsel = :vurderingsvarsel"),
+    @NamedQuery(name = "Besvarelse.modulEn", query = "SELECT b FROM Besvarelse b WHERE b.modulNummer = 1"),
+    @NamedQuery(name = "Besvarelse.modulTo", query = "SELECT b FROM Besvarelse b WHERE b.modulNummer = 2"),
     @NamedQuery(name = "Besvarelse.findByDato", query = "SELECT b FROM Besvarelse b WHERE b.dato = :dato")})
 public class Besvarelse implements Serializable {
 

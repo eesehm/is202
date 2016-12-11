@@ -2,6 +2,7 @@
 package slitclient.view;
 
 
+import Data.BesvarelseData;
 import Data.BrukerData;
 import java.io.IOException;
 import java.net.URL;
@@ -24,6 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import slitclient.manager.BeskjedManager;
+import slitclient.manager.BesvarelseManager;
 import slitclient.manager.BrukerManager;
 
 
@@ -64,11 +66,32 @@ public class foreleserController implements Initializable {
     private Button submitBrukerBtn;
     @FXML
     private Button leggTilBeskjedBtn;
-    
+    @FXML
+    private TableView<BesvarelseData> besvarelseTable;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnBesvarelseId;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnBesvarelseDato;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnFil;
+    @FXML
+    private Label antallBesvarelserLabel;
+    @FXML
+    private Label antallBesvarelserLabel2;
+    @FXML
+    private TableView<BesvarelseData> besvarelseTable2;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnBesvarelseId2;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnBesvarelseDato2;
+    @FXML
+    private TableColumn<BesvarelseData, String> columnFil2;
    
     public ObservableList<BrukerData> studentData;
     
+    public ObservableList<BesvarelseData> besvarelseData;
     
+    public ObservableList<BesvarelseData> besvarelseData2;
      
     @FXML
     public void leggTilModul(ActionEvent e) throws IOException { //åpner vindu for å legge til ny modul
@@ -133,6 +156,37 @@ public class foreleserController implements Initializable {
             
             mainTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
             antallStudenterLabel.setText(""+this.mainTableView.getItems().size());
+            
+            //modul 1 table:
+            BesvarelseManager besvarelsemanager = new BesvarelseManager();
+            
+            columnBesvarelseId.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("besvarelseID"));
+            
+            columnBesvarelseDato.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("dato"));
+            columnFil.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("opplastet_fil"));
+            
+            this.besvarelseData = FXCollections.observableArrayList();
+            this.besvarelseData.addAll(besvarelsemanager.getBesvarelser());
+            this.besvarelseTable.setItems(besvarelseData);
+            
+            besvarelseTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+            antallBesvarelserLabel.setText(""+this.besvarelseTable.getItems().size()+"/"+this.mainTableView.getItems().size());
+            
+            //modul 2 table:
+            
+            
+            columnBesvarelseId2.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("besvarelseID"));
+            
+            columnBesvarelseDato2.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("dato"));
+            columnFil2.setCellValueFactory(new PropertyValueFactory<BesvarelseData, String> ("opplastet_fil"));
+            
+            this.besvarelseData2 = FXCollections.observableArrayList();
+            this.besvarelseData2.addAll(besvarelsemanager.getBesvarelser2());
+            this.besvarelseTable2.setItems(besvarelseData2);
+            
+            besvarelseTable2.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+            antallBesvarelserLabel2.setText(""+this.besvarelseTable2.getItems().size()+"/"+this.mainTableView.getItems().size());
+            
         }
         @FXML
         public void deleteBruker(ActionEvent e) throws IOException { //sletter valgt bruker

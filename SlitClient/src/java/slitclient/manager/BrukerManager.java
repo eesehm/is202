@@ -29,7 +29,8 @@ public class BrukerManager {
     {
         return bruker.getID(); 
     }
-        public static String getUserFirstName() 
+    
+    public static String getUserFirstName() 
         {
             return bruker.getFornavn();
         }
@@ -62,7 +63,7 @@ public class BrukerManager {
         
         bruker = loggedInBruker; 
         
-        Authenticator.setBruker(bruker);
+      //  Authenticator.setBruker(bruker);
         
         return loggedInBruker; 
         

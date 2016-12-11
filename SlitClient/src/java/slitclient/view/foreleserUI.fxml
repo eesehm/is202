@@ -63,20 +63,41 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
                <children>
-                  <Button layoutX="34.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Godkjenn" />
-                  <TableView layoutX="22.0" layoutY="34.0" prefHeight="372.0" prefWidth="456.0">
+                  <Button layoutX="34.0" layoutY="437.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Godkjenn" />
+                  <TableView fx:id="besvarelseTable" layoutX="22.0" layoutY="34.0" prefHeight="372.0" prefWidth="420.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Navn" />
-                      <TableColumn prefWidth="90.0" text="Dato Levert" />
-                        <TableColumn prefWidth="89.0" text="Dato Levert" />
+                      <TableColumn fx:id="columnBesvarelseId" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="columnBesvarelseDato" minWidth="0.0" prefWidth="214.0" text="Dato Levert" />
+                        <TableColumn fx:id="columnFil" prefWidth="129.0" text="Fil" />
                     </columns>
                   </TableView>
+                  <Label layoutX="24.0" layoutY="412.0" text="Antall besvarelser/Antall studenter:" />
+                  <Label fx:id="antallBesvarelserLabel" layoutX="215.0" layoutY="410.0" prefHeight="21.0" prefWidth="57.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
       </content>
     </Tab>
       <Tab text="Modul 2">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
+               <children>
+                  <TableView fx:id="besvarelseTable2" layoutX="48.0" layoutY="45.0" prefHeight="372.0" prefWidth="420.0">
+                     <columns>
+                        <TableColumn fx:id="columnBesvarelseId2" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="columnBesvarelseDato2" minWidth="0.0" prefWidth="214.0" text="Dato Levert" />
+                        <TableColumn fx:id="columnFil2" prefWidth="129.0" text="Fil" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="48.0" layoutY="429.0" text="Antall besvarelser/Antall studenter:" />
+                  <Label fx:id="antallBesvarelserLabel2" layoutX="244.0" layoutY="429.0" prefHeight="17.0" prefWidth="81.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
          </content>
       </Tab>
       <Tab text="Modul 3">

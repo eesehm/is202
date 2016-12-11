@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Database;
 
 import java.io.Serializable;
@@ -34,8 +29,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Beskjed.findByBeskjedMelding", query = "SELECT b FROM Beskjed b WHERE b.beskjedMelding = :beskjedMelding"),
     @NamedQuery(name = "Beskjed.findByBeskjedDato", query = "SELECT b FROM Beskjed b WHERE b.beskjedDato = :beskjedDato"),
     @NamedQuery(name = "Beskjed.delete", query = "DELETE FROM Beskjed b WHERE b.beskjedId > 1"),
-   
     @NamedQuery(name = "Beskjed.findByBeskjedId", query = "SELECT b FROM Beskjed b WHERE b.beskjedId = :beskjedId")})
+
 public class Beskjed implements Serializable {
 
     private static final long serialVersionUID = 1L;

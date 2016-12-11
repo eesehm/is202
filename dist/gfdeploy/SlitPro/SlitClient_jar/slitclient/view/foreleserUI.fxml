@@ -64,9 +64,9 @@
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lavender;">
                <children>
                   <Button layoutX="34.0" layoutY="511.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="76.0" text="Godkjenn" />
-                  <TableView layoutX="22.0" layoutY="34.0" prefHeight="372.0" prefWidth="456.0">
+                  <TableView fx:id="besvarelseTable" layoutX="22.0" layoutY="34.0" prefHeight="372.0" prefWidth="456.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Navn" />
+                      <TableColumn fx:id="columnBesvarelseId" prefWidth="75.0" text="Navn" />
                       <TableColumn prefWidth="90.0" text="Dato Levert" />
                         <TableColumn prefWidth="89.0" text="Dato Levert" />
                     </columns>

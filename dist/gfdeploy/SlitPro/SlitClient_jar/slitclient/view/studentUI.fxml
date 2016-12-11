@@ -13,7 +13,7 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Label fx:id="fornavnLabel" layoutX="74.0" layoutY="14.0" text="Fornavn">
+            <Label fx:id="fornavnLabel" layoutX="84.0" layoutY="21.0">
                <font>
                   <Font size="25.0" />
                </font>

@@ -5,7 +5,6 @@ import Database.Bruker;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
-import javax.jms.Session;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceContext;
@@ -25,7 +24,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
         return bruker.getFornavn();
     }
 
-    public void persist(Object object) {
+    public void persist(Object object) { //kan fjernes
         em.persist(object);
     }
     
@@ -127,6 +126,7 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
           BrukerData bd = new BrukerData();
           Query q = em.createNamedQuery("Bruker.delete", Bruker.class);
           q.setParameter("id", brukerId);
+          
           q.executeUpdate();
           
           return bd;
@@ -134,14 +134,13 @@ public class BrukerSessionBean implements BrukerSessionBeanRemote {
       }
       @Override
       public BrukerData deleteBrukere() {
+          
           BrukerData bd = new BrukerData();
           Query q = em.createNamedQuery("Bruker.deleteAll", Bruker.class);
           
           q.executeUpdate();
           
-          return bd;
-      
-          
+          return bd;   
       }
      
           
